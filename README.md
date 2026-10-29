@@ -125,3 +125,25 @@ sequenceDiagram
     Run->>Run: clean → quality gates → score → report
     Run->>Site: commit refreshed CSV, map, charts
 ```
+
+## How a site is scored
+
+Each factor is scaled from 0 to 1, weighted, and added up to a **0–100 score**. All weights live in one file, [`gridsite/config.py`](gridsite/config.py), so the whole policy can be changed in one place.
+
+| Factor | Weight | In plain words | Exactly |
+|---|---:|---|---|
+| ⚡ Grid proximity | **40%** | How close is the big grid? | Distance to the nearest ≥ 115 kV substation: 1.0 on top of it, falling to 0 at 10 km |
+| 🔌 Voltage class | **20%** | How big is that substation? | ≥ 345 kV → 1.0 · ≥ 230 kV → 0.8 · ≥ 115 kV → 0.5 |
+| 🛣️ Truck access | **25%** | Can trucks get in and out easily? | Distance to the nearest freeway exit: 1.0 at the exit, 0 at 5 km |
+| 🏭 Local generation | **15%** | Is there power being made nearby? | Published plant capacity within 10 miles, log-scaled so 1 GW → 1.0 |
+
+**Tiers are percentiles**: top 10% → **A**, next 25% → **B**, next 35% → **C**, the rest → **D**. A tier always means the same share of sites, however the weights are tuned.
+
+```mermaid
+pie showData
+    title Sites by tier
+    "A (top 10%)" : 141
+    "B" : 352
+    "C" : 481
+    "D" : 416
+```
