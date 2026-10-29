@@ -147,3 +147,14 @@ pie showData
     "C" : 481
     "D" : 416
 ```
+
+## Quality gates
+
+The pipeline **refuses to publish** if the data looks wrong ([`checks.py`](gridsite/checks.py)):
+
+- every layer has a minimum row count, so an empty download fails loudly instead of producing an empty map
+- no missing coordinates; every point is valid and inside its region
+- no duplicate OpenStreetMap ids
+- every score is between 0 and 100, and no distance is negative
+
+These gates paid off on the very first real run. Overpass returns **only a bounding box** for areas in `out center bb` mode, so every industrial site was silently dropped. The row-count gate stopped the pipeline instead of publishing an empty map. The fix (take the center of the bounding box) now has its own test.
