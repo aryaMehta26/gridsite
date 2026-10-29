@@ -66,3 +66,11 @@ Every one of the top five is **within a kilometer of a 230–500 kV substation *
 <p align="center">
   <img src="docs/img/substations_by_voltage.png" width="60%" alt="Substations by highest voltage">
 </p>
+
+## How to read the map
+
+- 🟢 **Dark green**: Tier A, the top 10% of sites. Bigger dots, drawn on top.
+- 🟢 **Light green**: Tier B, the next 25%.
+- 🟡 🔴 **Yellow / red**: Tiers C and D, hidden by default. Tick them in the top-right box.
+- 🔷 **Dark-blue diamonds**: substations at 115 kV or more. Bigger diamond, higher voltage.
+- **Click any site** to see its rank, score, size, the substation it's closest to, its distance to the freeway, nearby power generation, and a link to the satellite view.
