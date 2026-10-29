@@ -1,0 +1,132 @@
+{
+  "generated_at": "2026-10-29T02:45:52.275438+00:00",
+  "regions": [
+    "bay_area",
+    "stockton"
+  ],
+  "substations": 536,
+  "hv_substations_115kv_plus": 184,
+  "power_plants": 224,
+  "plants_with_capacity": 73,
+  "candidate_sites": 1390,
+  "freeway_exits": 1591,
+  "tier_counts": {
+    "A": 141,
+    "B": 352,
+    "C": 481,
+    "D": 416
+  },
+  "median_km_to_hv_substation": 2.05,
+  "top_10": [
+    {
+      "osm_id": "way/186073707",
+      "name": null,
+      "region": "bay_area",
+      "score": 93.9,
+      "tier": "A",
+      "hv_substation_km": 0.40586899649888836,
+      "nearest_hv_substation": "Metcalf Substation",
+      "nearest_hv_voltage_kv": 500.0,
+      "freeway_exit_km": 0.7568584879439992
+    },
+    {
+      "osm_id": "way/865190318",
+      "name": null,
+      "region": "bay_area",
+      "score": 93.8,
+      "tier": "A",
+      "hv_substation_km": 0.24728636819702268,
+      "nearest_hv_substation": "Las Positas Substation",
+      "nearest_hv_voltage_kv": 230.0,
+      "freeway_exit_km": 0.19992554014234964
+    },
+    {
+      "osm_id": "way/1389619163",
+      "name": null,
+      "region": "bay_area",
+      "score": 93.1,
+      "tier": "A",
+      "hv_substation_km": 0.09185379087910905,
+      "nearest_hv_substation": "Contra Costa Substation",
+      "nearest_hv_voltage_kv": 230.0,
+      "freeway_exit_km": 0.5092419336627879
+    },
+    {
+      "osm_id": "way/39392665",
+      "name": null,
+      "region": "bay_area",
+      "score": 92.6,
+      "tier": "A",
+      "hv_substation_km": 0.09020681631567035,
+      "nearest_hv_substation": "Northern Receiving Station",
+      "nearest_hv_voltage_kv": 230.0,
+      "freeway_exit_km": 0.4491434085680777
+    },
+    {
+      "osm_id": "way/1389619169",
+      "name": null,
+      "region": "bay_area",
+      "score": 92.2,
+      "tier": "A",
+      "hv_substation_km": 0.7970218501009845,
+      "nearest_hv_substation": "Contra Costa Power Plant Substation",
+      "nearest_hv_voltage_kv": 230.0,
+      "freeway_exit_km": 0.1277398924351575
+    },
+    {
+      "osm_id": "way/186405732",
+      "name": null,
+      "region": "bay_area",
+      "score": 92.2,
+      "tier": "A",
+      "hv_substation_km": 0.40295675325732516,
+      "nearest_hv_substation": "Coyote Switching Station",
+      "nearest_hv_voltage_kv": 230.0,
+      "freeway_exit_km": 0.2897546680238778
+    },
+    {
+      "osm_id": "way/1389619167",
+      "name": null,
+      "region": "bay_area",
+      "score": 91.9,
+      "tier": "A",
+      "hv_substation_km": 0.5687778438249836,
+      "nearest_hv_substation": "Contra Costa Power Plant Substation",
+      "nearest_hv_voltage_kv": 230.0,
+      "freeway_exit_km": 0.3572142742279046
+    },
+    {
+      "osm_id": "way/1390557635",
+      "name": null,
+      "region": "bay_area",
+      "score": 91.3,
+      "tier": "A",
+      "hv_substation_km": 0.7824934955352468,
+      "nearest_hv_substation": "Contra Costa Power Plant Substation",
+      "nearest_hv_voltage_kv": 230.0,
+      "freeway_exit_km": 0.3081208265402768
+    },
+    {
+      "osm_id": "way/1389619168",
+      "name": null,
+      "region": "bay_area",
+      "score": 91.2,
+      "tier": "A",
+      "hv_substation_km": 0.8100129505348741,
+      "nearest_hv_substation": "Contra Costa Power Plant Substation",
+      "nearest_hv_voltage_kv": 230.0,
+      "freeway_exit_km": 0.3066971612733845
+    },
+    {
+      "osm_id": "way/865190319",
+      "name": null,
+      "region": "bay_area",
+      "score": 91.2,
+      "tier": "A",
+      "hv_substation_km": 0.5426152665407536,
+      "nearest_hv_substation": "Las Positas Substation",
+      "nearest_hv_voltage_kv": 230.0,
+      "freeway_exit_km": 0.4913689581894327
+    }
+  ]
+}
