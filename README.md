@@ -74,3 +74,54 @@ Every one of the top five is **within a kilometer of a 230–500 kV substation *
 - 🟡 🔴 **Yellow / red**: Tiers C and D, hidden by default. Tick them in the top-right box.
 - 🔷 **Dark-blue diamonds**: substations at 115 kV or more. Bigger diamond, higher voltage.
 - **Click any site** to see its rank, score, size, the substation it's closest to, its distance to the freeway, nearby power generation, and a link to the satellite view.
+
+## How it works
+
+```mermaid
+flowchart LR
+    subgraph Sources["OpenStreetMap via Overpass API"]
+        A1[⚡ substations]
+        A2[🏭 power plants]
+        A3[🏗️ industrial land]
+        A4[🛣️ freeway exits]
+    end
+
+    subgraph Pipeline["gridsite (Python)"]
+        B[ingest<br/>fetch + cache]
+        C[clean<br/>parse voltage + capacity,<br/>drop unusable sites]
+        Q{quality gates}
+        D[geo<br/>nearest substation<br/>+ nearest exit]
+        E[score<br/>0–100 + tiers]
+        F[report<br/>map · charts · summary]
+    end
+
+    subgraph Outputs
+        G[(sites_scored.csv)]
+        H[🗺️ live map]
+        I[📊 charts]
+        J[(summary.json)]
+    end
+
+    A1 & A2 & A3 & A4 --> B --> C --> Q
+    Q -- pass --> D --> E --> F
+    Q -- fail --> X[[stop: publish nothing]]
+    F --> G & H & I & J
+```
+
+Every Monday, GitHub Actions re-runs the whole thing on fresh data:
+
+```mermaid
+sequenceDiagram
+    participant Cron as GitHub Actions (Mon 09:00 UTC)
+    participant Tests as pytest (28 tests)
+    participant Run as gridsite run
+    participant OSM as OpenStreetMap
+    participant Site as Live map
+    Cron->>Tests: run the tests first
+    Tests-->>Cron: pass
+    Cron->>Run: python -m gridsite run
+    Run->>OSM: 4 layers × 2 regions (retries + backup server)
+    OSM-->>Run: raw data
+    Run->>Run: clean → quality gates → score → report
+    Run->>Site: commit refreshed CSV, map, charts
+```
