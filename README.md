@@ -158,3 +158,43 @@ The pipeline **refuses to publish** if the data looks wrong ([`checks.py`](grids
 - every score is between 0 and 100, and no distance is negative
 
 These gates paid off on the very first real run. Overpass returns **only a bounding box** for areas in `out center bb` mode, so every industrial site was silently dropped. The row-count gate stopped the pipeline instead of publishing an empty map. The fix (take the center of the bounding box) now has its own test.
+
+## Run it
+
+Requires Python 3.12+. No API keys, no accounts.
+
+```bash
+git clone https://github.com/aryaMehta26/gridsite.git
+cd gridsite
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+
+python -m pytest -q                                   # 28 tests, no network needed
+python -m gridsite run --regions bay_area stockton    # download, score, write docs/ + data/processed/
+python -m gridsite run --use-cache                    # reuse downloaded data, only fetch what's missing
+open docs/index.html
+```
+
+Want another region? Add a bounding box to `REGIONS` in [`config.py`](gridsite/config.py).
+
+<details>
+<summary><b>Project layout</b></summary>
+
+```
+gridsite/
+├── gridsite/
+│   ├── config.py      # regions, weights, thresholds: the whole scoring policy
+│   ├── overpass.py    # Overpass client: POST, retries, backup server
+│   ├── ingest.py      # one query per layer -> data/raw/<region>_<layer>.json
+│   ├── clean.py       # voltage / capacity parsing, site filtering, area from bbox
+│   ├── geo.py         # haversine distance, chunked nearest-neighbor, radius search (numpy only)
+│   ├── score.py       # factors, weights, percentile tiers
+│   ├── checks.py      # data quality gates
+│   ├── report.py      # folium map, matplotlib charts, summary.json
+│   └── __main__.py    # command line
+├── tests/             # 28 tests on hand-made Overpass fixtures
+├── data/processed/    # scored sites, high-voltage substations, summary
+├── docs/              # GitHub Pages: live map, charts, header
+└── .github/workflows/ # ci.yml (tests on every push) · refresh.yml (weekly rebuild)
+```
+</details>
