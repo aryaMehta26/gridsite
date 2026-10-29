@@ -198,3 +198,25 @@ gridsite/
 └── .github/workflows/ # ci.yml (tests on every push) · refresh.yml (weekly rebuild)
 ```
 </details>
+
+## Limitations (read before trusting a ranking)
+
+- **Being near a substation isn't the same as having capacity at it.** A 230 kV substation next door says nothing about whether it has spare headroom. Utilities publish capacity maps that answer that; GridSite doesn't use them yet.
+- **OpenStreetMap coverage varies.** Missing or untagged substations make an area look worse than it is (see Stockton).
+- **Site size is approximate.** It comes from each parcel's bounding box, which overestimates irregular shapes.
+- **Distances are straight-line**, not along roads or power-line corridors.
+- **Zoning, land price, and availability aren't modeled.** This is a first-pass screen, not a siting decision.
+
+## What's next
+
+- [ ] Add the CAISO interconnection queue to weight sites by *planned* capacity, not just what's built today
+- [ ] Join utility capacity data where it's published
+- [ ] Use real parcel shapes instead of bounding boxes
+- [ ] Export a CARTO-ready layer
+- [ ] Add more freight regions: Inland Empire, Port of Oakland drayage, the I-5 corridor
+
+## Data & license
+
+Map data © [OpenStreetMap contributors](https://www.openstreetmap.org/copyright), available under the [Open Database License (ODbL)](https://opendatacommons.org/licenses/odbl/). Code under the [Apache License 2.0](LICENSE).
+
+Built by [Arya Mehta](https://github.com/aryaMehta26).
