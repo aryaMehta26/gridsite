@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-10-29T02:45:52.275438+00:00",
+  "generated_at": "2026-11-09T19:41:05.086165+00:00",
   "regions": [
     "bay_area",
     "stockton"
   ],
   "substations": 536,
   "hv_substations_115kv_plus": 184,
-  "power_plants": 224,
+  "power_plants": 225,
   "plants_with_capacity": 73,
-  "candidate_sites": 1390,
+  "candidate_sites": 1393,
   "freeway_exits": 1591,
   "tier_counts": {
     "A": 141,
-    "B": 352,
-    "C": 481,
+    "B": 348,
+    "C": 488,
     "D": 416
   },
-  "median_km_to_hv_substation": 2.05,
+  "median_km_to_hv_substation": 2.04,
   "top_10": [
     {
       "osm_id": "way/186073707",
@@ -24,7 +24,7 @@
       "region": "bay_area",
       "score": 93.9,
       "tier": "A",
-      "hv_substation_km": 0.40586899649888836,
+      "hv_substation_km": 0.40586899649888847,
       "nearest_hv_substation": "Metcalf Substation",
       "nearest_hv_voltage_kv": 500.0,
       "freeway_exit_km": 0.7568584879439992
@@ -63,17 +63,6 @@
       "freeway_exit_km": 0.4491434085680777
     },
     {
-      "osm_id": "way/1389619169",
-      "name": null,
-      "region": "bay_area",
-      "score": 92.2,
-      "tier": "A",
-      "hv_substation_km": 0.7970218501009845,
-      "nearest_hv_substation": "Contra Costa Power Plant Substation",
-      "nearest_hv_voltage_kv": 230.0,
-      "freeway_exit_km": 0.1277398924351575
-    },
-    {
       "osm_id": "way/186405732",
       "name": null,
       "region": "bay_area",
@@ -85,12 +74,23 @@
       "freeway_exit_km": 0.2897546680238778
     },
     {
+      "osm_id": "way/1389619169",
+      "name": null,
+      "region": "bay_area",
+      "score": 92.2,
+      "tier": "A",
+      "hv_substation_km": 0.7970218501009845,
+      "nearest_hv_substation": "Contra Costa Power Plant Substation",
+      "nearest_hv_voltage_kv": 230.0,
+      "freeway_exit_km": 0.1277398924351575
+    },
+    {
       "osm_id": "way/1389619167",
       "name": null,
       "region": "bay_area",
       "score": 91.9,
       "tier": "A",
-      "hv_substation_km": 0.5687778438249836,
+      "hv_substation_km": 0.5687778438249835,
       "nearest_hv_substation": "Contra Costa Power Plant Substation",
       "nearest_hv_voltage_kv": 230.0,
       "freeway_exit_km": 0.3572142742279046
