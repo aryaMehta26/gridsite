@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-11-09T19:41:05.086165+00:00",
+  "generated_at": "2026-11-16T19:37:29.259416+00:00",
   "regions": [
     "bay_area",
     "stockton"
   ],
   "substations": 536,
   "hv_substations_115kv_plus": 184,
-  "power_plants": 225,
+  "power_plants": 224,
   "plants_with_capacity": 73,
-  "candidate_sites": 1393,
+  "candidate_sites": 1396,
   "freeway_exits": 1591,
   "tier_counts": {
     "A": 141,
-    "B": 348,
-    "C": 488,
+    "B": 350,
+    "C": 489,
     "D": 416
   },
   "median_km_to_hv_substation": 2.04,
@@ -63,17 +63,6 @@
       "freeway_exit_km": 0.4491434085680777
     },
     {
-      "osm_id": "way/186405732",
-      "name": null,
-      "region": "bay_area",
-      "score": 92.2,
-      "tier": "A",
-      "hv_substation_km": 0.40295675325732516,
-      "nearest_hv_substation": "Coyote Switching Station",
-      "nearest_hv_voltage_kv": 230.0,
-      "freeway_exit_km": 0.2897546680238778
-    },
-    {
       "osm_id": "way/1389619169",
       "name": null,
       "region": "bay_area",
@@ -83,6 +72,17 @@
       "nearest_hv_substation": "Contra Costa Power Plant Substation",
       "nearest_hv_voltage_kv": 230.0,
       "freeway_exit_km": 0.1277398924351575
+    },
+    {
+      "osm_id": "way/186405732",
+      "name": null,
+      "region": "bay_area",
+      "score": 92.2,
+      "tier": "A",
+      "hv_substation_km": 0.40295675325732516,
+      "nearest_hv_substation": "Coyote Switching Station",
+      "nearest_hv_voltage_kv": 230.0,
+      "freeway_exit_km": 0.2897546680238778
     },
     {
       "osm_id": "way/1389619167",
